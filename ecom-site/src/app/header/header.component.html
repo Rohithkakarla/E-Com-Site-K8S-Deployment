@@ -1,0 +1,65 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <img src="../assets/Images/sitelogo.png" style="height: 30px;width: 90px;">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto" >
+        <li class="nav-item active" style="padding-left: 13px;">
+          <a class="nav-link" routerLink="/main">Home</a>
+        </li>
+        <li class="nav-item" style="padding-left: 13px;">
+          <form class="form-inline">
+            <div class="input-group mb-3">
+              <input class="form-control form-control-sm" type="search" placeholder="Search" aria-label="Search">
+              <div class="input-group-append">
+                <button class="btn btn-success btn-sm" id="basic-addon1" type="submit">@</button>
+              </div>
+            </div>
+          </form>
+        </li>
+        <li *ngIf="!loginstatus" class="nav-item active" style="padding-left: 13px;">
+          <a class="nav-link" routerLink="/login">LogIn</a>
+        </li>
+        <li *ngIf="!loginstatus" class="nav-item" style="padding-left: 13px;">
+          <a class="nav-link" routerLink="/signup">SignUp</a>
+        </li>
+        <li *ngIf="loginstatus" class="nav-item" style="padding-left: 13px;">
+          <div class="btn-group">
+            <button type="button" class="btn btn-light btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Categories
+            </button>
+            <div class="dropdown-menu">
+              <div *ngFor="let cat of categories;"class="dropdown-item" (click)="router.navigate(['/category/',cat.id]);">{{cat.name}}</div>
+            </div>
+          </div>
+        </li>
+        <li *ngIf="loginstatus" class="nav-item" style="padding-left: 13px;">
+          <a class="nav-link example-icon" routerLink="/wishlist">
+            <mat-icon matBadge="0" matBadgeColor="warn">favorite_border</mat-icon>
+          </a> 
+        </li>
+        <li *ngIf="loginstatus" class="nav-item" style="padding-left: 13px;">
+          <a class="nav-link example-icon" routerLink="/cart">
+            <mat-icon matBadge="{{cartitems}}" matBadgeColor="warn">shopping_cart</mat-icon>
+          </a> 
+        </li>
+        <!--<li class="nav-item" style="padding-left: 13px;">
+          <button mat-icon-button class="example-icon">
+            <mat-icon matBadge="15" matBadgeColor="warn">shopping_cart</mat-icon>
+          </button>
+        </li>-->
+        <li *ngIf="loginstatus" class="nav-item active">
+          <a class="nav-link" routerLink="/profile">Profile</a>
+        </li>
+        <li *ngIf="loginstatus" class="nav-item active">
+          <a class="nav-link" (click)="logOut()">LogOut</a>
+        </li>
+      </ul>
+      
+    </div>
+  </nav>

@@ -1,0 +1,43 @@
+<div class="login-page">
+    <div class="form">
+      <div *ngIf="signupstatus" class="alert alert-danger" role="alert">
+        Please Check Confirm Password or Email Already Exists and Make Sure Form is Filled Completely!
+      </div>
+      <form class="register-form" [formGroup]="form">
+        <div class="form-group">
+          <mat-form-field appearance="outline" style="width:100%;height:20px;">
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="Name" formControlName = "name" type="telephone" autocomplete="off">
+          </mat-form-field>
+        </div>
+        <div class="form-group">
+          <mat-form-field appearance="outline" style="width:100%;height:20px;">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Email" formControlName = "email" type="email" autocomplete="off">
+          </mat-form-field>
+        </div>
+        <div class="form-group">
+          <mat-form-field appearance="outline" style="width:100%;height:20px;">
+            <mat-label>phone Number</mat-label>
+            <input matInput placeholder="phoneNo" formControlName = "phoneNo" type="telephone" autocomplete="off">
+          </mat-form-field>
+        </div>
+        <div class="form-group">
+          <mat-form-field appearance="outline" style="width:100%;height:20px;">
+            <mat-label>Password</mat-label>
+            <input matInput placeholder="password" formControlName = "password" type="password" autocomplete="off">
+          </mat-form-field>
+        </div>
+        <div class="form-group">
+          <mat-form-field appearance="outline" style="width:100%;height:20px;">
+            <mat-label>Confirm Password</mat-label>
+            <input matInput placeholder="Confirm Password" formControlName = "confirmpassword" type="password" autocomplete="off">
+          </mat-form-field>
+        </div>
+        <br>
+        <br>
+        <button type="submit" class="btn" (click)="CreateUser()">create</button>
+        <p class="message">Already registered? <a routerLink="/login">Sign In</a></p>
+      </form>
+    </div>
+  </div>

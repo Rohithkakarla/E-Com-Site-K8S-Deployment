@@ -1,0 +1,117 @@
+<div class="container-fluid">
+    <br>
+    <div *ngFor="let item of products;index as i;">
+        <div *ngIf="i%6==0" class="row">
+            <div class="col-xl-2 col-lg-4 col-md-6 col-sm-6 col-12">
+
+                <div class="card" style="width: fit-content;text-align: center;">
+                    <img class="card-img-top" src="../../assets/Images/{{categoryname}}/{{products[i].name}}.jpg" style="height:150px;" alt="Card image cap" >
+                    <div class="card-body">
+                        <h5 class="card-title">{{products[i].name}}</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <div class="row">
+                            <div class="col-1"></div>
+                            <div class="col-10">
+                                <button type="button" class="btn btn-warning" (click)="route.navigate(['/product/',products[i].id]);">Product Page</button>
+                            </div>
+                            <div class="col-1"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-xl-2 col-lg-4 col-md-6 col-sm-6 col-12" *ngIf="i + 1 < products.length">
+                
+                <div class="card" style="width: fit-content;text-align: center;">
+                    <img class="card-img-top" src="../../assets/Images/{{categoryname}}/{{products[i+1].name}}.jpg" style="height:150px;" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{products[i+1].name}}</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <div class="row">
+                            <div class="col-1"></div>
+                            <div class="col-10">
+                                <button type="button" class="btn btn-warning" (click)="route.navigate(['/product/',products[i+1].id]);">Product Page</button>
+                            </div>
+                            <div class="col-1"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-xl-2 col-lg-4 col-md-6 col-sm-6 col-12" *ngIf="i + 2 < products.length">
+    
+                <div class="card" style="width: fit-content;text-align: center;">
+                    <img class="card-img-top" src="../../assets/Images/{{categoryname}}/{{products[i+2].name}}.jpg" style="height:150px;" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{products[i+2].name}}</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <div class="row">
+                            <div class="col-1"></div>
+                            <div class="col-10">
+                                <button type="button" class="btn btn-warning" (click)="route.navigate(['/product/',products[i+2].id]);">Product Page</button>
+                            </div>
+                            <div class="col-1"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-xl-2 col-lg-4 col-md-6 col-sm-6 col-12" *ngIf="i + 3 < products.length">
+
+                <div class="card" style="width: fit-content;text-align: center;">
+                    <img class="card-img-top" src="../../assets/Images/{{categoryname}}/{{products[i+3].name}}.jpg"  style="height:150px;" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{products[i+3].name}}</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <div class="row">
+                            <div class="col-1"></div>
+                            <div class="col-10">
+                                <button type="button" class="btn btn-warning" (click)="route.navigate(['/product/',products[i+3].id]);">Product Page</button>
+                            </div>
+                            <div class="col-1"></div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <div class="col-xl-2 col-lg-4 col-md-6 col-sm-6 col-12" *ngIf="i + 4 < products.length">
+
+                <div class="card" style="width: fit-content;text-align: center;">
+                    <img class="card-img-top" src="../../assets/Images/{{categoryname}}/{{products[i+4].name}}.jpg" style="height:150px;" alt="Card image cap" >
+                    <div class="card-body">
+                        <h5 class="card-title">{{products[i+4].name}}</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <div class="row">
+                            <div class="col-1"></div>
+                            <div class="col-10">
+                                <button type="button" class="btn btn-warning" (click)="route.navigate(['/product/',products[i+4].id]);">Product Page</button>
+                            </div>
+                            <div class="col-1"></div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <div class="col-xl-2 col-lg-4 col-md-6 col-sm-6 col-12" *ngIf="i + 5 < products.length">
+
+                <div class="card" style="width: fit-content;text-align: center;">
+                    <img class="card-img-top" src="../../assets/Images/{{categoryname}}/{{products[i+5].name}}.jpg" style="height:150px;" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{products[i+5].name}}</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <div class="row">
+                            <div class="col-1"></div>
+                            <div class="col-10">
+                                <button type="button" class="btn btn-warning" (click)="route.navigate(['/product/',products[i+5].id]);">Product Page</button>
+                            </div>
+                            <div class="col-1"></div>
+                        </div>   
+                    </div>
+                </div>
+                <br>
+            </div>
+
+            
+        </div>
+    </div>
+</div>

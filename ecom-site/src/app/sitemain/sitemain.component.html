@@ -1,0 +1,108 @@
+<br>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12 col-md-4 col-lg-3 col-xl-3">
+            <div class="card" style="width: 18rem;cursor:pointer;">
+                <div class="card-header">
+                  Categories
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li *ngFor="let category of categories" class="list-group-item" (click)="router.navigate(['/category/',category.id]);">{{category.name}}</li>
+                </ul>
+              </div>
+        </div>
+        <div class="col-sm-12 col-md-8 col-lg-9 col-xl-9">
+            <div>
+                <div *ngFor="let item of categorytoproduct;index as i;">
+                  <div *ngIf="i%3==0" class="row">
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+              
+                        <div class="card">
+                            <div class="card-body">
+                            <h5 class="card-title">{{categorytoproduct[i].categoryname}}</h5>
+                            <div class="card-text">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <img class="perfect-image" src="../../assets/Images/{{categorytoproduct[i].categoryname}}/{{categorytoproduct[i].products[0].name}}.jpg" (click)="router.navigate(['/product/',categorytoproduct[i].products[0].id]);">
+                                    </div>
+                                    <div class="col-6">
+                                        <img class="perfect-image" src="../../assets/Images/{{categorytoproduct[i].categoryname}}/{{categorytoproduct[i].products[1].name}}.jpg" (click)="router.navigate(['/product/',categorytoproduct[i].products[1].id]);">
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <img class="perfect-image" src="../../assets/Images/{{categorytoproduct[i].categoryname}}/{{categorytoproduct[i].products[2].name}}.jpg" (click)="router.navigate(['/product/',categorytoproduct[i].products[2].id]);">
+                                    </div>
+                                    <div class="col-6">
+                                        <img class="perfect-image" src="../../assets/Images/{{categorytoproduct[i].categoryname}}/{{categorytoproduct[i].products[3].name}}.jpg" (click)="router.navigate(['/product/',categorytoproduct[i].products[3].id]);">
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+              
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12" *ngIf="i + 1 < categorytoproduct.length">
+              
+                        <div class="card">
+                            <div class="card-body">
+                            <h5 class="card-title">{{categorytoproduct[i+1].categoryname}}</h5>
+                            <div class="card-text">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <img class="perfect-image" src="../../assets/Images/{{categorytoproduct[i+1].categoryname}}/{{categorytoproduct[i+1].products[0].name}}.jpg" (click)="router.navigate(['/product/',categorytoproduct[i+1].products[0].id]);">
+                                    </div>
+                                    <div class="col-6">
+                                        <img class="perfect-image" src="../../assets/Images/{{categorytoproduct[i+1].categoryname}}/{{categorytoproduct[i+1].products[1].name}}.jpg" (click)="router.navigate(['/product/',categorytoproduct[i+1].products[1].id]);">
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <img class="perfect-image" src="../../assets/Images/{{categorytoproduct[i+1].categoryname}}/{{categorytoproduct[i+1].products[2].name}}.jpg" (click)="router.navigate(['/product/',categorytoproduct[i+1].products[2].id]);">
+                                    </div>
+                                    <div class="col-6">
+                                        <img class="perfect-image" src="../../assets/Images/{{categorytoproduct[i+1].categoryname}}/{{categorytoproduct[i+1].products[3].name}}.jpg" (click)="router.navigate(['/product/',categorytoproduct[i+1].products[3].id]);">
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+              
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12" *ngIf="i + 2 < categorytoproduct.length">
+              
+                        <div class="card">
+                            <div class="card-body">
+                            <h5 class="card-title">{{categorytoproduct[i+2].categoryname}}</h5>
+                            <div class="card-text">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <img class="perfect-image" src="../../assets/Images/{{categorytoproduct[i+2].categoryname}}/{{categorytoproduct[i+2].products[0].name}}.jpg" (click)="router.navigate(['/product/',categorytoproduct[i+2].products[0].id]);">
+                                    </div>
+                                    <div class="col-6">
+                                        <img class="perfect-image" src="../../assets/Images/{{categorytoproduct[i+2].categoryname}}/{{categorytoproduct[i+2].products[1].name}}.jpg" (click)="router.navigate(['/product/',categorytoproduct[i+2].products[1].id]);">
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <img class="perfect-image" src="../../assets/Images/{{categorytoproduct[i+2].categoryname}}/{{categorytoproduct[i+2].products[2].name}}.jpg" (click)="router.navigate(['/product/',categorytoproduct[i+2].products[2].id]);">
+                                    </div>
+                                    <div class="col-6">
+                                        <img class="perfect-image" src="../../assets/Images/{{categorytoproduct[i+2].categoryname}}/{{categorytoproduct[i+2].products[3].name}}.jpg" (click)="router.navigate(['/product/',categorytoproduct[i+2].products[3].id]);">
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+              
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+        </div>
+    </div>
+</div>

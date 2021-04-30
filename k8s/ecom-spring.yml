@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  # name ---> name of the deployment
+  name: ecom-spring-deployment
+  # labels ---> identification purpose
+  labels:
+    app: springrest
+spec:
+  template:
+    # Pod details here
+    metadata:
+      name: ecom-spring-pod
+      labels:
+        app: ecom-spring-pod
+    spec:
+      containers:
+        - image: rohithkakarla/ecomspring:latest
+          name: ecom-spring
+          env:
+            - name: MONGO_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: ecom-spring-configmap
+                  key: host
+            - name: MONGO_DB
+              valueFrom:
+                configMapKeyRef:
+                  name: ecom-spring-configmap
+                  key: db
+            - name: MONGO_USERNAME
+              valueFrom:
+                configMapKeyRef:
+                  name: ecom-spring-configmap
+                  key: username
+            - name: MONGO_PASSWORD
+              valueFrom:
+                configMapKeyRef:
+                  name: ecom-spring-configmap
+                  key: password
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ecom-spring-pod

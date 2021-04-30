@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ecom-mongo-deployment
+  labels:
+    app: ecom-mongo-deployment
+spec:
+  selector: 
+    matchLabels:
+      app: ecom-mongo-pod
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ecom-mongo-pod
+      name: ecom-mongo-pod
+    spec:
+      containers:
+      - image: mongo:latest
+        name: ecom-mongo-cont
+        env:
+          - name: MONGO_INITDB_ROOT_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: ecom-mongo-secret
+                key: username
+          - name: MONGO_INITDB_ROOT_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: ecom-mongo-secret
+                key: password
+          - name: MONGO_INITDB_DATABASE
+            valueFrom:
+              secretKeyRef:
+                name: ecom-mongo-secret
+                key: db
+        ports:
+          - containerPort: 27017
+            name: ecom-mongo-cont
+        volumeMounts:
+          - name: ecom-mongo-persistent-storage
+            mountPath: /data/db
+          - name: ecom-mongo-startupscript
+            mountPath: /docker-entrypoint-initdb.d/init-mongo.js
+      volumes:
+        - name: ecom-mongo-persistent-storage # Obtaining 'vloume' from PVC
+          hostPath:
+            path: /tmp/db
+            type: Directory
+        - name: ecom-mongo-startupscript
+          hostPath:
+            path: /mongo-init.js
+          #persistentVolumeClaim:
+          #  claimName: ecom-mongo-pv-claim

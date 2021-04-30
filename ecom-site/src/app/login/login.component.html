@@ -1,0 +1,27 @@
+<br>
+
+<div class="login-page">
+  <div class="form">
+        <div *ngIf="login" class="alert alert-danger" role="alert">
+          Please Check Email & Password!
+        </div>
+        <form class="login-form" [formGroup]="emailform">
+          <div class="form-group">
+            <mat-form-field appearance="outline" style="width:100%;height:20px;">
+              <mat-label>Email</mat-label>
+              <input matInput placeholder="Email" formControlName = "email" type="text" autocomplete="off">
+            </mat-form-field>
+          </div>
+          <div class="form-group">
+            <mat-form-field appearance="outline" style="width:100%;height:20px;">
+              <mat-label>password</mat-label>
+              <input matInput placeholder="Password" formControlName = "password" type="password">
+            </mat-form-field>
+        </div>
+        <br>
+          <button type="submit" (click)="checkLogin()">login</button>
+          <p class="message">Not registered? <a routerLink="/signup">Create an account</a></p>
+        </form>
+        <h1></h1>  
+  </div>
+</div>

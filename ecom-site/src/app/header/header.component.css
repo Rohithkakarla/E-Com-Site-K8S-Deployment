@@ -1,0 +1,19 @@
+.navbar {
+    font-size:20px;
+}
+.example-spacer {
+    flex: 1 1 auto;
+    padding: 5px 5px 5px 5px;
+  }
+
+  mat-form-field { /* Changes the input styling to just about nothing so that button styling can take over */
+    font-size: 13px;
+    padding-top: 15px;
+    padding-left: 20px;
+  }
+  
+  /* ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: transparent !important; //remove border if needed 
+  } */
+
+

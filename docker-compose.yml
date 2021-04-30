@@ -1,0 +1,35 @@
+version: '3'
+services:
+  ecom-database:
+    image: 'mongo:latest'
+    container_name: 'ecom-mongo-container'
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=password
+      - MONGO_INITDB_DATABASE=ecom_db
+    volumes:
+      - ./mongo-init.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+    #ports:
+    #  - 27017:27017
+    networks:
+      - ecom-network
+  ecom-spring:
+    depends_on:
+      - ecom-database
+    image: 'ecomsite:0.0.1-SNAPSHOT'
+    container_name: 'ecom-spring-container'
+    networks:
+      - ecom-network
+    ports:
+      - 8080:8080
+  ecom-angular:
+    depends_on:
+      - ecom-spring
+    build: .
+    container_name: 'ecom-angular-container'
+    ports:
+      - 80:80
+    networks:
+      - ecom-network
+networks:
+  ecom-network:
