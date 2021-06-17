@@ -1,0 +1,37 @@
+[{
+  "_id": {
+    "$oid": "607e6410c7a8fe2f6bf6ef9b"
+  },
+  "name": "Vegetables",
+  "_class": "com.rohith.ecomsite.Model.Category"
+},{
+  "_id": {
+    "$oid": "607e641bc7a8fe2f6bf6ef9c"
+  },
+  "name": "Fruits",
+  "_class": "com.rohith.ecomsite.Model.Category"
+},{
+  "_id": {
+    "$oid": "607e642bc7a8fe2f6bf6ef9d"
+  },
+  "name": "Dairy Items",
+  "_class": "com.rohith.ecomsite.Model.Category"
+},{
+  "_id": {
+    "$oid": "607e6435c7a8fe2f6bf6ef9e"
+  },
+  "name": "Meat",
+  "_class": "com.rohith.ecomsite.Model.Category"
+},{
+  "_id": {
+    "$oid": "607e6442c7a8fe2f6bf6ef9f"
+  },
+  "name": "Personal Care",
+  "_class": "com.rohith.ecomsite.Model.Category"
+},{
+  "_id": {
+    "$oid": "607e6455c7a8fe2f6bf6efa0"
+  },
+  "name": "Household Essentials",
+  "_class": "com.rohith.ecomsite.Model.Category"
+}]

@@ -1,11 +1,10 @@
-
-db.createUser(
+/*db.createUser(
   {
     user: 'root',
     pwd: 'password',
     roles: [{ role: 'readWrite', db: 'ecom-db' }],
   }
-);
+);*/
 db.createCollection('category');
 db.createCollection('products');
 db.createCollection('cart');
